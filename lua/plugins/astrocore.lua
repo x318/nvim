@@ -48,11 +48,6 @@ return {
         ["<C-PageDown>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<C-PageUp>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        ["<C-R>"] = {
-          function() require("resession").load "Last Session" end,
-          desc = "Load last session",
-        },
-
         -- ["<C-b>"] = { "<Cmd>Neotree toggle<CR>", desc = "Neotree toggle" },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
