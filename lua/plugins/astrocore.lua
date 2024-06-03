@@ -45,9 +45,10 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["<C-PageDown>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<C-PageDown>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "next buffer" },
         ["<C-PageUp>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        ["Z"] = "<Cmd>MultipleCursorsAddJumpNextMatch<CR>",
         -- ["<C-b>"] = { "<Cmd>Neotree toggle<CR>", desc = "Neotree toggle" },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
