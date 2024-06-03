@@ -9,6 +9,7 @@ require("lazy").setup({
       icons_enabled = true, -- Set to false to disable icons (if no Nerd Font is available)
       pin_plugins = nil, -- Default will pin plugins when tracking `version` of AstroNvim, set to true/false to override
       update_notifications = true, -- Enable/disable notification about running `:Lazy update` twice to update pinned plugins
+      colorscheme = "astrodark",
     },
   },
   { import = "community" },
@@ -16,7 +17,7 @@ require("lazy").setup({
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
   install = { colorscheme = { "astrodark", "habamax" } },
-  ui = { backdrop = 100 },
+  ui = { backdrop = 80 },
   performance = {
     rtp = {
       -- disable some rtp plugins, add more to your liking

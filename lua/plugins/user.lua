@@ -6,7 +6,6 @@ return {
   -- == CUSTOM ==
 
   "loqusion/experimental_mdx.nvim",
-
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
