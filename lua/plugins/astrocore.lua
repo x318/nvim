@@ -49,6 +49,7 @@ return {
         ["<C-PageUp>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         ["Z"] = "<Cmd>MultipleCursorsAddJumpNextMatch<CR>",
+        ["C"] = { function() require("astrocore.buffer").close() end },
         -- ["<C-b>"] = { "<Cmd>Neotree toggle<CR>", desc = "Neotree toggle" },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
