@@ -4,7 +4,7 @@
 ---@type LazySpec
 return {
   -- == CUSTOM ==
-
+  "tpope/vim-surround",
   "loqusion/experimental_mdx.nvim",
   {
     "nvim-neo-tree/neo-tree.nvim",
