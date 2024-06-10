@@ -11,7 +11,13 @@ local get_stores = function()
   return dirs
 end
 
-vim.api.nvim_create_user_command("Convermax", function(opts) vim.cmd("!yarn serve " .. opts.fargs[1]) end, {
+vim.api.nvim_create_user_command("Convermax", function(opts)
+  local terminal = require "toggleterm.terminal"
+  local current, _ = terminal.get_or_create_term(0)
+
+  if current.is_open(current) == false then current.open(current, 100, "vertical") end
+  current.send(current, { "yarn serve " .. opts.fargs[1] }, true)
+end, {
   nargs = 1,
   complete = get_stores,
 })
