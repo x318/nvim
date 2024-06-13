@@ -2,15 +2,15 @@ require("neo-tree.command").execute { action = "show" }
 require "./neovide"
 require "./convermax"
 
--- Commands
-vim.api.nvim_create_user_command(
-  "ReloadConfig",
-  function() vim.cmd("luafile " .. string.sub(vim.env.MYVIMRC, 0, #vim.env.MYVIMRC - 8) .. "/lua/polish.lua") end,
-  {}
-)
+local powershell_options = {
+  shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
+  shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+  shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+  shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+  shellquote = "",
+  shellxquote = "",
+}
 
-vim.api.nvim_create_user_command(
-  "ConfigHelp",
-  function() vim.cmd '!explorer "https://neovim.io/doc/user/lua-guide.html"' end,
-  {}
-)
+for option, value in pairs(powershell_options) do
+  vim.opt[option] = value
+end

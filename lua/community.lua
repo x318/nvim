@@ -8,5 +8,6 @@ return {
   { import = "astrocommunity.pack.gleam" },
   -- { import = "astrocommunity.pack.go" },
   -- { import = "astrocommunity.pack.rust" },
-  -- { import = "astrocommunity.pack.cs" },
+  -- { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.cs" },
 }
